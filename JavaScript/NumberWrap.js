@@ -9,5 +9,5 @@ const wrapNumber = (min, max, num) => {
 
 // EXAMPLE: 
 // Assuming an Array with 5 items:
-// const numberInRange = wrapNumber(0, Array.length + 1, 7); //Returns 1.
-// const numberInRange = wrapNumber(0, Array.length + 1, -1); //Returns 0
+// const numberInRange = wrapNumber(0, Array.length, 5); //Returns 0, bringing you back to the first array item.
+// const numberInRange = wrapNumber(0, Array.length, -1); //Returns 4, bringing you back to the last array item.
