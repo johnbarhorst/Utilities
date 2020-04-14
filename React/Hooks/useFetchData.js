@@ -1,5 +1,6 @@
 import { useReducer } from 'react';
 
+// This hook was written specifically for my own Express API. Error checking in json.status will likely need adjusting
 function reducer(state, action) {
   switch (action.type) {
     case 'FETCH': return {
