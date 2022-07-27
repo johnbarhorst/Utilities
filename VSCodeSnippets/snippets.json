@@ -1,0 +1,245 @@
+{
+  "Arrow Function Component": {
+    "scope": "javascript,typescript,typescriptreact,javascriptreact",
+    "prefix": "afc",
+    "body": [
+      "import React from 'react';",
+      "$1",
+      "const ${TM_FILENAME/(.*)\\..+$/$1/} = () => {",
+      "  return (",
+      "   <div>",
+      "     $2",
+      "   </div>",
+      " )",
+      "}",
+      "",
+      "export default ${TM_FILENAME/(.*)\\..+$/$1/};"
+    ]
+  },
+  "Arrow Function Styled Component": {
+    "scope": "javascript,typescript,typescriptreact,javascriptreact",
+    "prefix": "afsc",
+    "body": [
+      "import React from 'react';",
+      "import styled from 'styled-components';",
+      "$1",
+      "const ${TM_FILENAME/(.*)\\..+$/$1/} = () => {",
+      "  return (",
+      "   <div>",
+      "     $2",
+      "   </div>",
+      " )",
+      "}",
+      "",
+      "export default ${TM_FILENAME/(.*)\\..+$/$1/};"
+    ]
+  },
+  "Stateful Arrow Function Styled Component": {
+    "scope": "javascript,typescript,typescriptreact,javascriptreact",
+    "prefix": "safsc",
+    "body": [
+      "import React, { useState } from 'react';",
+      "import styled from 'styled-components';",
+      "$1",
+      "const ${TM_FILENAME/(.*)\\..+$/$1/} = () => {",
+      " $2",
+      "  return (",
+      "   <div>",
+      "     $3",
+      "   </div>",
+      " )",
+      "}",
+      "",
+      "export default ${TM_FILENAME/(.*)\\..+$/$1/};"
+    ]
+  },
+  "Styled Motion Component": {
+    "scope": "javascript,typescript,typescriptreact,javascriptreact",
+    "prefix": ":scfm",
+    "body": [
+      "import styled from 'styled-components';",
+      "import { motion } from 'framer-motion';",
+      "",
+      "export $1"
+    ],
+    "description": "quick start styled motion component"
+  },
+  "Import Framer Motion": {
+    "scope": "javascript,typescript,typescriptreact,javascriptreact",
+    "prefix": ":ifm",
+    "body": [
+      "import {$1} from 'framer-motion';$2"
+    ],
+    "description": "import framer motion"
+  },
+  "Import Styled Components": {
+    "scope": "javascript,typescript,typescriptreact,javascriptreact",
+    "prefix": ":isc",
+    "body": [
+      "import styled from 'styled-components';$1"
+    ]
+  },
+  "Import From Hooks": {
+    "scope": "javascript,typescript,typescriptreact,javascriptreact",
+    "prefix": ":ifh",
+    "body": [
+      "import {$1} from 'hooks';"
+    ],
+    "description": "import hooks shortcut"
+  },
+  "next-connect with middleware": {
+    "scope": "javascript,typescript,typescriptreact,javascriptreact",
+    "prefix": ":ncmw",
+    "body": [
+      "import nextConnect from 'next-connect';",
+      "import middleware from 'middleware/middleware';",
+      "",
+      "const handler = nextConnect();",
+      "handler.use(middleware);",
+      "",
+      "$1",
+      "",
+      "export default handler;"
+    ]
+  },
+  "import from components": {
+    "scope": "javascript,typescript,typescriptreact,javascriptreact",
+    "prefix": ":icom",
+    "body": [
+      "import {$1} from 'components';"
+    ]
+  },
+  "generic named import": {
+    "scope": "javascript,typescript,typescriptreact,javascriptreact",
+    "prefix": ":i{}",
+    "body": "import {$2} from '$1';"
+  },
+  "Export Default Named Function": {
+    "scope": "javascript,typescript,typescriptreact,javascriptreact",
+    "prefix": "ednf",
+    "body": [
+      "export default function ${TM_FILENAME/(.*)\\..+$/$1/}() {",
+      "$1",
+      "}"
+    ]
+  },
+  "Export Default Named Function Component": {
+    "scope": "javascript,typescript,typescriptreact,javascriptreact",
+    "prefix": "ednc",
+    "body": [
+      "export default function ${TM_FILENAME/(.*)\\..+$/$1/}() {",
+      "  return (",
+      "   <div>",
+      "     $1",
+      "   </div>",
+      " )",
+      "}"
+    ]
+  },
+  "Export Named Function Component": {
+    "scope": "javascript,typescript,typescriptreact,javascriptreact",
+    "prefix": "efc",
+    "body": [
+      "export function ${TM_FILENAME/(.*)\\..+$/$1/}() {",
+      "  return (",
+      "    <div>",
+      "      $1",
+      "    </div>",
+      " )",
+      "}"
+    ]
+  },
+  "Export TypeScript Function Component": {
+    "scope": "javascript,typescript,typescriptreact,javascriptreact",
+    "prefix": "ets",
+    "body": [
+      "import { ReactElement } from 'react';",
+      "",
+      "export function ${TM_FILENAME/(.*)\\..+$/$1/}():ReactElement {",
+      "  return (",
+      " );",
+      "}"
+    ]
+  },
+  "Import from Module dot CSS": {
+    "prefix": "icss",
+    "body": "import style from './${TM_FILENAME/(.*)\\..+$/$1/}.module.css';",
+    "description": "For Next.js with CSS Modules"
+  },
+  "Export React TypeScript Function Component": {
+    "scope": "javascript,typescript,typescriptreact,javascriptreact",
+    "prefix": "erts",
+    "body": [
+      "import React, { ReactElement } from 'react';",
+      "",
+      "export function ${TM_FILENAME/(.*)\\..+$/$1/}():ReactElement {",
+      "  return (",
+      "",
+      "  );",
+      "}"
+    ]
+  },
+  "Export React TypeScript JSX Function Component": {
+    "scope": "javascript,typescript,typescriptreact,javascriptreact",
+    "prefix": "erj",
+    "body": [
+      "import React from 'react';",
+      "",
+      "export function ${TM_FILENAME/(.*)\\..+$/$1/}():JSX.Element {",
+      "  return (",
+      "",
+      "  );",
+      "}"
+    ]
+  },
+  "Export React TypeScript JSX Function Component With Props": {
+    "scope": "javascript,typescript,typescriptreact,javascriptreact",
+    "prefix": "perj",
+    "body": [
+      "import React from 'react';",
+      "",
+      "type Props = {",
+      "",
+      "}",
+      "export function ${TM_FILENAME/(.*)\\..+$/$1/}({ }: Props):JSX.Element {",
+      "  return (",
+      "",
+      "  );",
+      "}"
+    ]
+  },
+  "An Array of Days": {
+    "prefix": "arrayofdays",
+    "body": "const weekdays = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];",
+    "description": "An array of days of the week"
+  },
+  "An Array of Months": {
+    "prefix": "arrayofmonths",
+    "body": [
+      "const months = [",
+      " 'January',",
+      " 'February',",
+      " 'March',",
+      " 'April',",
+      " 'May',",
+      " 'June',",
+      " 'July',",
+      " 'August',",
+      " 'September',",
+      " 'October',",
+      " 'November',",
+      " 'December'",
+      "];"
+    ]
+  },
+  "TS Index Export": {
+    "prefix": "e*f",
+    "body": "export * from './${TM_DIRECTORY/^.+\\/(.*)$/$1/}';",
+    "description": "export * from current directory name"
+  },
+  "Class Name for Module": {
+    "prefix": "cls",
+    "body": "className={style.$1}",
+    "description": "React className prop with style object for css modules"
+  }
+}
