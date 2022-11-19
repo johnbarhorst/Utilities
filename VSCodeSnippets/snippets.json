@@ -241,5 +241,58 @@
     "prefix": "cls",
     "body": "className={style.$1}",
     "description": "React className prop with style object for css modules"
+  },
+  "Nextjs Arrow Function Component": {
+    "scope": "javascript,typescript,typescriptreact,javascriptreact",
+    "prefix": "nfc",
+    "body": [
+      "$1",
+      "const ${TM_FILENAME/(.*)\\..+$/$1/}:JSX.Element = () => {",
+      "  return (",
+      "   <div>",
+      "     $2",
+      "   </div>",
+      " )",
+      "}",
+      "",
+      "export default ${TM_FILENAME/(.*)\\..+$/$1/};"
+    ]
+  },
+  "Next Page with Server Side Data": {
+    "scope": "javascript,typescript,typescriptreact,javascriptreact",
+    "prefix": "npssr",
+    "body": [
+      "import { GetServerSideProps, InferGetServerSidePropsType } from 'next';",
+      "import { useTranslation } from 'next-i18next';",
+      "import { serverSideTranslations } from 'next-i18next/serverSideTranslations';",
+      "import { SideNavLayout } from 'components/layout/SideNavLayout';",
+      "import { NextPageWithLayout } from 'pages/_app';",
+      "",
+      "export const getServerSideProps: GetServerSideProps = async ({ locale }) => {",
+      " return {",
+      "   props: {",
+      "     ...(await serverSideTranslations(locale ?? 'en', ['common', '${TM_DIRECTORY/^.+\\/(.*)$/$1/}']))",
+      "   }",
+      " };",
+      "};",
+      "",
+      "const ${TM_DIRECTORY/^.+\\/(.*)/${1:/capitalize}/}: NextPageWithLayout = (props: InferGetServerSidePropsType<typeof getServerSideProps>) => {",
+      " const { t } = useTranslation(['common', '${TM_DIRECTORY/^.+\\/(.*)$/$1/}']);",
+      "",
+      " return (",
+      "   <div />",
+      " );",
+      "};",
+      "",
+      "${TM_DIRECTORY/^.+\\/(.*)/${1:/capitalize}/}.getLayout = function getLayout(page) {",
+      " return (",
+      "   <SideNavLayout>",
+      "     {page}",
+      "   </SideNavLayout>",
+      " );",
+      "};",
+      "",
+      "export default ${TM_DIRECTORY/^.+\\/(.*)/${1:/capitalize}/};"
+    ]
   }
 }
